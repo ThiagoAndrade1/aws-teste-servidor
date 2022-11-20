@@ -30,11 +30,12 @@ module.exports={
     },    
     async create (req, res){
         try {
-            const { nome, funcao, setor } = req.body;
+            const { nome, funcao, setor, matricula } = req.body;
             await knex('funcionario').insert({
                 nome,
                 funcao,
-                setor
+                setor,
+                matricula
             })
 
             return res.status(201).send('Funcionário criado com sucesso!');
